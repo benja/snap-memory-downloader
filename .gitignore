@@ -6,3 +6,4 @@ node_modules
 memories
 memories_duplicate
 errors.txt
+.DS_Store
