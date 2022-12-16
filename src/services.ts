@@ -124,7 +124,9 @@ export async function findVideoMemoriesToMerge(): Promise<string[][]> {
 
     // get all files within those folders
     const folderPath = path.join(memoriesFolder, folder);
-    const files = await fs.readdir(folderPath);
+    const files = await (
+      await fs.readdir(folderPath)
+    ).filter((file) => file.endsWith(".mp4"));
 
     let clips: string[] = [];
 
